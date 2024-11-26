@@ -16,28 +16,28 @@
     </ul>
 </body>
 <script>
-    // Function to generate a random string of a given length
+    
     function randomString(length) {
-        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()"; // character set
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()"; 
         let result = ''; // Initialize the result variable
         for (let i = 0; i < length; i++) {
-            result += chars.charAt(Math.floor(Math.random() * chars.length)); // Use chars.length to pick random characters
+            result += chars.charAt(Math.floor(Math.random() * chars.length));
         }
         return result;
     }
 
-    // Add a fourth item to the list when the page loads
+    
     window.onload = function () {
         const ul = document.getElementById('list');
         const li = document.createElement('li');
         li.textContent = "Fourth item";
         ul.appendChild(li);
 
-        // Add event listeners to each list item
+        
         const list = document.querySelectorAll('li');
         list.forEach(item => {
             item.addEventListener('click', function() {
-                item.textContent = randomString(10); // Change text to a random string with 10 characters
+                item.textContent = randomString(10); 
             });
         });
     };
