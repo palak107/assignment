@@ -1,0 +1,45 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="ul.css">
+</head>
+<body>
+    <ul id="list">
+        <li>First item</li>
+        <li>Second item</li>
+        <li>Third item</li>
+    </ul>
+</body>
+<script>
+    // Function to generate a random string of a given length
+    function randomString(length) {
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()"; // character set
+        let result = ''; // Initialize the result variable
+        for (let i = 0; i < length; i++) {
+            result += chars.charAt(Math.floor(Math.random() * chars.length)); // Use chars.length to pick random characters
+        }
+        return result;
+    }
+
+    // Add a fourth item to the list when the page loads
+    window.onload = function () {
+        const ul = document.getElementById('list');
+        const li = document.createElement('li');
+        li.textContent = "Fourth item";
+        ul.appendChild(li);
+
+        // Add event listeners to each list item
+        const list = document.querySelectorAll('li');
+        list.forEach(item => {
+            item.addEventListener('click', function() {
+                item.textContent = randomString(10); // Change text to a random string with 10 characters
+            });
+        });
+    };
+</script>
+</html>

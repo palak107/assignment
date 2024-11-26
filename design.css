@@ -1,0 +1,40 @@
+
+
+
+body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the content vertically */
+    font-family: Arial, sans-serif;
+}
+
+/* Main container to hold the box */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    
+}
+
+/* Box styling */
+#box {
+    text-align: center;
+    padding: 20px;
+    width: 300px; /* Set a fixed width */
+    height: 150px; /* Set a height for the box */
+    border-radius: 4px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  margin-top: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect to change border color */
+#box:hover {
+    border-color: #e74c3c; /* Red border on hover */
+}

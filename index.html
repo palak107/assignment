@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    
+    function calculatearea(width, height) {
+    // Check if both width and height are positive numbers
+    if (typeof width === 'number' && typeof height === 'number' && width > 0 && height > 0) {
+        // If inputs are valid, calculate the area
+        const area = width * height;
+        return area;
+    } else {
+        // If inputs are invalid, log an error message
+        return "Invalid input. Please enter positive numbers for width and height.";
+    }
+}
+    console.log(calculatearea(5,3))
+    console.log(calculatearea(10,7))
+
+</script>
+</html>

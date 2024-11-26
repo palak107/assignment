@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="design.css">
+</head>
+<body>
+<mian>
+    <div id="box">
+        click here to do some changes
+    </div>
+</mian>
+</body>
+<script>
+    const box=document.getElementById('box')
+box.addEventListener('mouseenter',function(){
+    box.style.backgroundColor = '#e74c3c'; // Change to red when mouse enters
+    box.style.borderColor = '#e74c3c';
+      box.style.border = '4px solid #3498db'
+
+})
+box.addEventListener('mouseleave',function(){
+    box.style.backgroundColor = 'white'; // Change to red when mouse enters
+})
+box.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            box.style.backgroundColor = '#3498db';  // Blue background on Enter key press
+        }
+    });
+    window.addEventListener('resize', function() {
+        box.style.width = '50%';  // Change box width on window resize
+    });
+</script>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    
+    
+    body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+            margin: 0;
+        }
+
+        button {
+            padding: 30px 30px;
+            font-size: 20px;
+            
+            background-color: #db6e34;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            
+        }
+</style>
+<body>
+   <button id="button1">click Me!</button> 
+</body>
+<script>
+    const press=document.getElementById('button1')
+    press.addEventListener('click',()=>{
+        const color=randomcolor();
+        press.style.backgroundColor=color; 
+alert("button is clicked")
+    })
+    function randomcolor(){
+        var letter="0123456789ABCDEF".split("")
+        var color="#";
+        for(var i=0;i<6;i++){
+            color += letter[Math.floor(Math.random()*16)];
+        }
+        return color;
+    }
+    console.log(randomcolor)
+</script>
+</html>
