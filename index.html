@@ -10,19 +10,32 @@
 </body>
 <script>
     
-    function calculatearea(width, height) {
+    function calculateArea() {
+            
+            let width = parseFloat(prompt("Enter the width of the rectangle:"));
+            let height = parseFloat(prompt("Enter the height of the rectangle:"));
+
+            
+            while (isNaN(width) || isNaN(height) || width <= 0 || height <= 0) {
+                alert("Invalid input. Please enter positive numbers for both width and height.");
+            
+                width = parseFloat(prompt("Enter the width of the rectangle:"));
+                height = parseFloat(prompt("Enter the height of the rectangle:"));
+            }
+
+            
+            const area = width * height;
+
+            
+            console.log("The area of the rectangle is: " + area);
+        }
+
+        
+        calculateArea();
     
-    if (typeof width === 'number' && typeof height === 'number' && width > 0 && height > 0) {
+   
+
     
-        const area = width * height;
-        return area;
-    } else {
-    
-        return "Invalid input. Please enter positive numbers for width and height.";
-    }
-}
-    console.log(calculatearea(5,3))
-    console.log(calculatearea(10,7))
 
 </script>
 </html>
