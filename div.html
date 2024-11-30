@@ -6,31 +6,81 @@
     <title>Document</title>
     <link rel="stylesheet" href="design.css">
 </head>
+<style>
+    body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        main {
+            display: flex;
+            gap: 20px; /* Space between boxes */
+        }
+
+        /* Styling for the box elements */
+        .box {
+            width: 200px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            
+            font-size: 18px;
+            color: #3498db;
+            border-radius: 8px;
+           
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+     
+       
+       
+</style>
 <body>
-<mian>
-    <div id="box">
+<main>
+    <div class="box">
         click here to do some changes
     </div>
-</mian>
+    <div class="box">
+        second box
+    </div>
+</main>
 </body>
 <script>
-    const box=document.getElementById('box')
-box.addEventListener('mouseenter',function(){
-    box.style.backgroundColor = '#e74c3c'; // Change to red when mouse enters
-    box.style.borderColor = '#e74c3c';
-      box.style.border = '4px solid #3498db'
+    
+    const boxes = document.querySelectorAll('.box');
 
-})
-box.addEventListener('mouseleave',function(){
-    box.style.backgroundColor = 'white'; // Change to red when mouse enters
-})
-box.addEventListener('keydown', function(event) {
-        if (event.key === 'Enter') {
-            box.style.backgroundColor = '#3498db';  // Blue background on Enter key press
-        }
+    
+    boxes.forEach(box => {
+        box.addEventListener('mouseenter', function() {
+            box.style.backgroundColor = '#e74c3c'; 
+            box.style.borderColor = '#e74c3c';
+            box.style.border = '4px solid #3498db';
+        });
+        
+        box.addEventListener('mouseleave', function() {
+            box.style.backgroundColor = 'white'; // Reset background when mouse leaves
+        });
+
+        box.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                box.style.backgroundColor = '#3498db';  // Blue background on Enter key press
+            }
+        });
     });
+
     window.addEventListener('resize', function() {
-        box.style.width = '50%';  // Change box width on window resize
+        // Change width of all boxes when window is resized
+        boxes.forEach(box => {
+            box.style.width = '50%';
+        });
     });
 </script>
 </html>

@@ -17,6 +17,7 @@ main {
     align-items: center;
     height: 100%; 
     box-sizing: border-box;
+    gap:20px;
 }
 
 /* Box styling */
